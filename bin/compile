@@ -4,7 +4,14 @@
 IRSSI_BINARY="http://irssi-buildpack.herokuapp.com/output/5d113eca-f133-4984-bf35-cacba8828644"
 IRSSI_VENDOR="vendor/irssi"
 
-echo "Creating IRSSI directory"
+echo "-----> Downloading IRSSI binary"
 mkdir -p $1/$IRSSI_VENDOR
-echo "Downloading IRSSI binary"
 curl $IRSSI_BINARY -o - | tar -xz -C $1/$IRSSI_VENDOR -f -
+
+echo "-----> Generating the boot script"
+cat >>$1/bin/boot.sh <<'EOF'
+#!/usr/bin/env bash
+
+vendor/irssi/bin/irssi -c .irssi
+EOF
+chmod +x $1/bin/boot.sh
