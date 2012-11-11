@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-if [ -f $1/.irssi ]; then
+if [ -f $1/.irssi/config ]; then
   echo "IRSSI"
   exit 0
 else
+  echo "IRSSI config not detected!"
   exit 1
 fi
