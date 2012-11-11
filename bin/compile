@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
+echo "-----> Downloading IRSSI binary"
 IRSSI_BINARY="http://irssi-buildpack.herokuapp.com/output/5d113eca-f133-4984-bf35-cacba8828644"
 IRSSI_VENDOR="vendor/irssi"
-
-echo "-----> Downloading IRSSI binary"
 mkdir -p $1/$IRSSI_VENDOR
 curl $IRSSI_BINARY -o - | tar -xz -C $1/$IRSSI_VENDOR -f -
+
+echo "-----> Downloading screen binary"
+SCREEN_BINARY="http://irssi-buildpack.herokuapp.com/output/4c15e3d6-f888-4902-8ddb-58bf2a2c2cc8"
+SCREEN_VENDOR="vendor/screen"
+mkdir -p $1/$SCREEN_VENDOR
+curl $SCREEN_BINARY -o - | tar -xz -C $1/$SCREEN_VENDOR -f -
 
 echo "-----> Generating the boot script"
 mkdir -p $1/bin
