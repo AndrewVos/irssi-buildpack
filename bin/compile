@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
 IRSSI_BINARY="http://irssi-buildpack.herokuapp.com/output/5d113eca-f133-4984-bf35-cacba8828644"
 IRSSI_VENDOR="vendor/irssi"
 
