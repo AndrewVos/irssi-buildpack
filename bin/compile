@@ -9,6 +9,7 @@ mkdir -p $1/$IRSSI_VENDOR
 curl $IRSSI_BINARY -o - | tar -xz -C $1/$IRSSI_VENDOR -f -
 
 echo "-----> Generating the boot script"
+mkdir -p $1/bin
 cat >>$1/bin/boot.sh <<'EOF'
 #!/usr/bin/env bash
 
