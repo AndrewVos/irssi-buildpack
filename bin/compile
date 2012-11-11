@@ -4,5 +4,7 @@
 IRSSI_BINARY="http://irssi-buildpack.herokuapp.com/output/5d113eca-f133-4984-bf35-cacba8828644"
 IRSSI_VENDOR="vendor/irssi"
 
+echo "Creating IRSSI directory"
 mkdir -p $1/$IRSSI_VENDOR
+echo "Downloading IRSSI binary"
 curl $IRSSI_BINARY -o - | tar -xz -C $1/$IRSSI_VENDOR -f -
