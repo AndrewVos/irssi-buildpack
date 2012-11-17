@@ -18,6 +18,6 @@ mkdir -p $1/bin
 cat >>$1/bin/boot.sh <<'EOF'
 #!/usr/bin/env bash
 
-vendor/screen/bin/screen
+vendor/screen/bin/screen -d -m
 EOF
 chmod +x $1/bin/boot.sh
