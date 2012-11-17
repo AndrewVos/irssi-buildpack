@@ -8,7 +8,7 @@ mkdir -p $1/$IRSSI_VENDOR
 curl $IRSSI_BINARY -o - | tar -xz -C $1/$IRSSI_VENDOR -f -
 
 echo "-----> Downloading tmux binary"
-TMUX_BINARY="http://irssi-buildpack.herokuapp.com/output/300266b2-9656-416d-9f74-b4b0a8fb3591"
+TMUX_BINARY="http://irssi-buildpack.herokuapp.com/output/a90d19ef-d573-47cb-9b4c-406b72d0ae7b"
 TMUX_VENDOR="vendor/tmux"
 mkdir -p $1/$TMUX_VENDOR
 curl $TMUX_BINARY -o - | tar -xz -C $1/$TMUX_VENDOR -f -
